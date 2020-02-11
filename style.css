@@ -1,0 +1,47 @@
+.creature {
+            width:  200px;
+            height: 200px;
+            border-radius: 50%;
+            background: #3ac;
+            position: relative;
+
+        }
+
+        .creature::before, .creature::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 40px;
+            border-radius: 50%;
+            background: #000;
+            top: 40px;
+            animation: eye 10s ease-in-out infinite;
+        }
+        .mouth1 {
+  position: absolute;
+  right: 97%;
+  top: 10%;
+  height: 108px;
+  width: 50px;
+  border-radius: 150px 0 0 150px;
+  border-top: 20px solid green;
+  border-left: 20px solid red;
+  border-bottom: 20px solid green;
+  transform: translate(100px) rotate(-90deg);
+  animation: mouth 2s;
+}
+        .creature::before { left: 55px; }
+        .creature::after { right: 55px; }
+        @keyframes eye {
+            10% { transform: scaleY(1.0); }
+            30% { transform: scaleY(0.1); }
+            50% { transform: scaleY(2); }
+            60% { transform: scaleY(3); }
+            80% { transform: scaleY(0.1); }
+        }
+        @keyframes mouth {
+            10% { transform: scaleY(0.1); }
+            10% { transform: scaleY(2); }
+            10% { transform: scaleY(3); }
+            10% { transform: scaleY(0.1); }
+        }
